@@ -1,35 +1,35 @@
-.card {
-    position: relative;
-    border-radius: 4px;
-    background: #E8FFFF;
-    overflow: hidden;
+.avatar {
+    margin: 0 auto;
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    border: solid 3px #5A5A5A;
+    color: #F8F8F8;
+    text-align: center;
+    padding-top: 0.57em;
+    font-size: 1.7em;
 }
 
-.card:hover {
-    background: #E1FAFC;
+.avatar:hover {
+    border: solid 3px #F8F8F8;
 }
 
-.card:hover .count {
-    background: #E1FAFC;
+.color-1 {
+    background: #0C486C;
 }
 
-.img {
-    width: 100%;
+.color-2 {
+    background: #EB9605;
 }
 
-.count {
-    background: #E8FFFF;
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 2em;
-    /*margin: 1em;*/
-    padding: 0.5em;
-    -moz-border-radius-bottomleft: 4px;
-    border-bottom-left-radius: 4px;
+.color-3 {
+    background: #FE4E50;
 }
 
-.title {
-    font-size: 1.5em;
-    margin: 1em;
+.color-4 {
+    background: #3C81B5;
+}
+
+.color-5 {
+    background: #24273A;
 }

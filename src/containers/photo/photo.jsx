@@ -1,26 +1,23 @@
-import {Link, Route, useParams} from "react-router-dom";
-import React, {useState, useEffect} from 'react';
+import React from 'react';
+import {connect} from "react-redux";
+import Photo from "../../components/photo/photo";
 
-function Photo() {
-    const {userId, albumId, photoId} = useParams();
-    const [photo, setPhoto] = useState();
-    useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/photos?id=${photoId}`)
-            .then(response => response.json())
-            .then(json => setPhoto(json[0]));
-    }, [1]);
+const putStateToProps = (state) => {
+    return {
+        photos: state.app.photos,
+        albums: state.app.albums,
+        users: state.app.users
+    };
+};
+
+const putActionsToProps = () => {
+    return {};
+};
+
+const ContainerPhoto = (props) => {
     return (
-        <div>
-            {photo ?
-                <div>
-                    <div> prev </div>
-                    <div>{photo.title}</div>
-                    <img src={photo.url}/>
-                    <div> next </div>
-                </div> : null}
-        </div>
+        <Photo {...props} />
     );
-}
+};
 
-export default Photo;
-
+export default connect(putStateToProps, putActionsToProps)(ContainerPhoto);

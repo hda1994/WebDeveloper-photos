@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', serif;
+    color: #5A5A5A;
+}
+body {
+    background: #F8F8F8;
+}
+a, a:active, a:visited, a:hover {
+    text-decoration: none;
+    color: #5A5A5A;
+}
+.bold {
+    font-weight: 500;
+}
+
+.wrapper {
+    //margin: 0 auto;
+    display: grid;
+    grid-gap: 25px;
+    align-content: center;
+    justify-content: center;
+}
+
+
+/*Смартфоны (Портрет и ландшафтный)*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .wrapper {
+            grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/*Смартфоны (portrait)*/
+@media only screen and (max-width : 320px) {
+    .wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/*Смартфоны (ландшафтный)*/
+@media only screen and (min-width : 321px) and (max-width : 767px) {
+    .wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/*iPads (Портрет и Ландшафтный)*/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+}
+
+/*iPads (Ландшафтный)*/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+    .wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/*iPads (Портрет)*/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+    .wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (min-width : 1025px) {
+    .wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/*Настольные компьютеры и ноутбуки*/
+@media only screen and (min-width : 1224px) {
+    .wrapper {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/*Большие экраны*/
+@media only screen and (min-width : 1824px) {
+    .wrapper {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/*iPhone 4*/
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5),only screen and (min-device-pixel-ratio : 1.5) {}

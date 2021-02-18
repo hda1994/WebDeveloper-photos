@@ -1,35 +1,15 @@
+.name {
+    margin: 0.5em auto;
+    text-align: center;
+}
+
 .card {
-    position: relative;
+    padding: 1.5em;
     border-radius: 4px;
-    background: #E8FFFF;
-    overflow: hidden;
+    background: #D6D6D6;
 }
 
 .card:hover {
-    background: #E1FAFC;
-}
-
-.card:hover .count {
-    background: #E1FAFC;
-}
-
-.img {
-    width: 100%;
-}
-
-.count {
-    background: #E8FFFF;
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 2em;
-    /*margin: 1em;*/
-    padding: 0.5em;
-    -moz-border-radius-bottomleft: 4px;
-    border-bottom-left-radius: 4px;
-}
-
-.title {
-    font-size: 1.5em;
-    margin: 1em;
+    box-shadow: 0 0 10px rgba(90, 90, 90, 0.5);
+    background: #72BAAC;
 }

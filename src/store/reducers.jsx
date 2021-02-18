@@ -1,9 +1,7 @@
 import {combineReducers} from "redux";
-import testInputReducer from './test-input/reducers';
-import shirtCreatorReducer from './shirt-creator/reducers';
+import appReducer from './app/reducers';
 
 
 export default combineReducers({
-    testInput: testInputReducer,
-    shirtCreator: shirtCreatorReducer
+    app: appReducer
 });

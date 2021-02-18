@@ -1,32 +1,25 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
-import {
-    changeActiveFirstTab,
-    changeActiveSecondTab,
-    changeChooseFabric,
-    loadAllFabrics
-} from "../../store/shirt-creator/actions";
-import ShirtCreator from "../../components/shirt-creator/shirt-creator";
+import App from "../../components/app/app";
+import {loadAlbums, loadPhotos, loadUsers} from "../../store/app/actions";
 
-
-const putStateToProps = (state) => {
-    return {
-        firstTabs: state.shirtCreator.firstTabs
-    };
+const putStateToProps = () => {
+    return {};
 };
 
 const putActionsToProps = (dispatch) => {
     return {
-        changeChooseFabric: bindActionCreators(changeChooseFabric, dispatch)
+        loadUsers: bindActionCreators(loadUsers, dispatch),
+        loadAlbums: bindActionCreators(loadAlbums, dispatch),
+        loadPhotos: bindActionCreators(loadPhotos, dispatch),
     };
 };
 
-
-const ContainerShirtCreator = (props) => {
+const ContainerApp = (props) => {
     return (
-        <ShirtCreator {...props} />
+        <App {...props} />
     );
 };
 
-export default connect(putStateToProps, putActionsToProps)(ContainerShirtCreator);
+export default connect(putStateToProps, putActionsToProps)(ContainerApp);

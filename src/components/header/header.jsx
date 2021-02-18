@@ -1,22 +1,29 @@
-import {Link} from "react-router-dom";
 import React from 'react';
-import classes from './album-card.module.css';
+import classes from './header.module.css';
 
-function AlbumCard(props) {
-    const {userId, id, title, mainPhoto, countPhotos} = props;
+function Header(props) {
+    const {children} = props;
+    const showNav = () => {
+        if (children) {
+            if (Array.isArray(children)) {
+                return children.map((elem, index) =>
+                    <nav className={`${classes[`nav${index + 2}`]} ${classes.nav}`} key={index}>
+                        {elem}
+                    </nav>)
+            }
+            return <nav className={`${classes['nav2']} ${classes.nav}`}>
+                {children}
+            </nav>
+        }
+        return null;
+    };
 
     return (
-        <Link to={`/${userId}/${id}`}>
-            <div className={classes.card}>
-                <div>
-                    <img className={classes.img} src={mainPhoto}/>
-                </div>
-                <div className={classes.count}>{countPhotos}</div>
-                <div className={classes.title}>{title}</div>
-            </div>
-        </Link>
+        <header className={classes.header}>
+            <nav className={`${classes['nav1']} ${classes.nav}`}>Test-Task</nav>
+            {showNav()}
+        </header>
     );
 }
 
-export default AlbumCard;
-
+export default Header;
