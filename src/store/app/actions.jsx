@@ -1,39 +1,46 @@
-export const ACTION_CHANGE_CHOOSE_FABRIC = 'ACTION_CHANGE_CHOOSE_FABRIC';
-export const ACTION_LOAD_ALL_FABRICS = 'ACTION_LOAD_ALL_FABRICS';
-export const ACTION_PUT_ALL_FABRICS = 'ACTION_PUT_ALL_FABRICS';
-export const ACTION_CHANGE_ACTIVE_FIRST_TAB = 'ACTION_CHANGE_ACTIVE_FIRST_TAB';
-export const ACTION_CHANGE_ACTIVE_SECOND_TAB = 'ACTION_CHANGE_ACTIVE_SECOND_TAB';
+export const LOAD_USERS = 'LOAD_USERS';
+export const LOAD_ALBUMS = 'LOAD_ALBUMS';
+export const LOAD_PHOTOS = 'LOAD_PHOTOS';
+export const PUT_USERS = 'PUT_USERS';
+export const PUT_ALBUMS = 'PUT_ALBUMS';
+export const PUT_PHOTOS = 'PUT_PHOTOS';
 
 
-export const changeChooseFabric = (newChooseFabric: any) => {
+export const loadUsers = () => {
     return {
-        type: ACTION_CHANGE_CHOOSE_FABRIC,
-        payload: newChooseFabric
+        type: LOAD_USERS
     };
 };
 
-export const loadAllFabrics = () => {
+export const loadAlbums = () => {
     return {
-        type: ACTION_LOAD_ALL_FABRICS
+        type: LOAD_ALBUMS
     };
 };
 
-export const putAllFabrics = (data: any) => {
+export const loadPhotos = () => {
     return {
-        type: ACTION_PUT_ALL_FABRICS,
+        type: LOAD_PHOTOS
+    };
+};
+
+export const putUsers = (data) => {
+    return {
+        type: PUT_USERS,
         payload: data
     };
 };
 
-export const changeActiveFirstTab = (tab: any) => {
+export const putAlbums = (data) => {
     return {
-        type: ACTION_CHANGE_ACTIVE_FIRST_TAB,
-        payload: tab
+        type: PUT_ALBUMS,
+        payload: data
     };
 };
-export const changeActiveSecondTab = (tab: any) => {
+
+export const putPhotos = (data) => {
     return {
-        type: ACTION_CHANGE_ACTIVE_SECOND_TAB,
-        payload: tab
+        type: PUT_PHOTOS,
+        payload: data
     };
 };

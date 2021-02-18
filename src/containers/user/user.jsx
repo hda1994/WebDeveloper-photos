@@ -1,29 +1,22 @@
-import {Link, Route, useParams} from "react-router-dom";
-import React, {useState, useEffect} from 'react';
-import AlbumCard from "../albumCard/album-card";
-import classes from './user.module.css';
+import React from 'react';
+import {connect} from "react-redux";
+import User from "../../components/user/user";
 
-function User() {
-    const {userId} = useParams();
-    const [albums, setAlbums] = useState([]);
-    useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/albums?userId=${userId}`)
-            .then(response => response.json())
-            .then(json => {
-                setAlbums(json);
-            });
-    }, [1]);
+const putStateToProps = (state) => {
+    return {
+        albums: state.app.albums,
+        photos: state.app.photos
+    };
+};
+
+const putActionsToProps = () => {
+    return {};
+};
+
+const ContainerUser = (props) => {
     return (
-        <div className={`wrapper`}>
-            {albums.map(elem =>
-                <AlbumCard
-                    userId={userId}
-                    albumId={elem.id}
-                    title={elem.title}/>
-            )}
-        </div>
+        <User {...props} />
     );
-}
+};
 
-export default User;
-
+export default connect(putStateToProps, putActionsToProps)(ContainerUser);

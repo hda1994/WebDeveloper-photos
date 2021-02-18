@@ -1,36 +1,97 @@
-.card {
-    position: relative;
+.nav {
     border-radius: 4px;
-    background: #D6D6D6;
-    overflow: hidden;
-}
-
-.card:hover {
-    background: #72BAAC;
-    box-shadow: 0 0 10px rgba(90, 90, 90, 0.5);
-}
-
-.card:hover .count {
-    background: #72BAAC;
-}
-
-.img {
-    width: 100%;
-}
-
-.count {
-    background: #D6D6D6;
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 2em;
-    /*margin: 1em;*/
     padding: 0.5em;
-    -moz-border-radius-bottomleft: 4px;
-    border-bottom-left-radius: 4px;
+    font-size: 1.7em;
 }
 
-.title {
-    font-size: 1.5em;
-    margin: 1em;
+.nav:hover a {
+    color: #EE7546;
+}
+
+.nav1 {
+    grid-area: nav1;
+}
+
+.nav2 {
+    grid-area: nav2;
+}
+
+.nav3 {
+    grid-area: nav3;
+}
+
+.header {
+    margin-bottom: 1em;
+    display: grid;
+    grid-gap: 25px;
+    align-content: center;
+    /*justify-content: center;*/
+    grid-template-areas: "nav1 nav2 nav3 nav3 nav3";
+}
+
+/*Смартфоны (Портрет и ландшафтный)*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+}
+
+/*Смартфоны (portrait)*/
+@media only screen and (max-width: 320px) {
+    .header {
+        grid-template-areas: "nav1" "nav2" "nav3";
+    }
+}
+
+/*Смартфоны (ландшафтный)*/
+@media only screen and (min-width: 321px) and (max-width: 767px) {
+    .header {
+        grid-template-areas: "nav1" "nav2" "nav3";
+    }
+}
+
+/*iPads (Портрет и Ландшафтный)*/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+
+}
+
+/*iPads (Ландшафтный)*/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .header {
+        grid-template-areas: "nav1 nav2 nav3 nav3 nav3";
+    }
+}
+
+/*iPads (Портрет)*/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .header {
+        grid-template-areas: "nav1 nav2" "nav3 nav3";
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .header {
+        grid-template-areas: "nav1 nav2 nav3 nav3 nav3";
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .header {
+        grid-template-areas: "nav1 nav2 nav3 nav3 nav3 nav3";
+    }
+}
+
+/*Настольные компьютеры и ноутбуки*/
+@media only screen and (min-width: 1224px) {
+    .header {
+        grid-template-areas: "nav1 nav2 nav3 nav3 nav3 nav3";
+    }
+}
+
+/*Большие экраны*/
+@media only screen and (min-width: 1824px) {
+    .header {
+        grid-template-areas: "nav1 nav2 nav3 nav3 nav3 nav3";
+    }
+}
+
+/*iPhone 4*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
 }

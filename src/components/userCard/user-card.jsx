@@ -1,30 +1,29 @@
 import {Link} from "react-router-dom";
-import React from 'react';
-import classes from './album-card.module.css';
+import React, {useState} from 'react';
+import classes from './user-card.module.css';
+import Avatar from "../avatar/avatar";
 
-function AlbumCard(props) {
-    const {userId, albumId, title, photos} = props;
-
-    let mainPhoto;
-    let countPhotos;
-    if (photos) {
-        let firstPhoto = photos.find(elem => elem.albumId === albumId);
-        mainPhoto = firstPhoto ? firstPhoto.thumbnailUrl : null;
-        countPhotos = photos.filter(elem => elem.albumId === albumId).length;
-    }
+function UserCard(props) {
+    const [isOpen, setIsOpen] = useState(false);
+    const {id, name, email, phone, website} = props;
 
     return (
-        <Link to={`/${userId}/${albumId}`}>
-            <div key={albumId} className={classes.card}>
-                <div>
-                    <img className={classes.img} src={mainPhoto}/>
+        <Link to={`/${id}`}>
+            <div className={classes.card}>
+                <Avatar name={name} onClick={() => setIsOpen(!isOpen)} id={id}/>
+                <div className={`${classes.name} bold`}>
+                    {name}
                 </div>
-                <div className={classes.count}>{countPhotos}</div>
-                <div className={classes.title}>{title}</div>
+                {isOpen ?
+                    <React.Fragment>
+                        <div><span className={'bold'}>E-mail:</span> {email}</div>
+                        <div><span className={'bold'}>Phone:</span> {phone}</div>
+                        <div><span className={'bold'}>Website:</span> {website}</div>
+                    </React.Fragment>
+                    : null}
             </div>
         </Link>
     );
 }
 
-export default AlbumCard;
-
+export default UserCard;
